@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Brand from "@/components/Brand.vue";
+import Brand from "@/components/Blogger/Brand.vue";
 
 export default {
   components: {Brand},

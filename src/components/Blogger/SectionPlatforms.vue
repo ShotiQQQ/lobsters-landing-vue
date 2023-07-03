@@ -9,7 +9,7 @@
           <h2>Работаем с любой платформой, <br class="platforms-br-desktop"> главное — качество аудитории</h2>
         </div>
         <ul class="platforms-icons">
-          
+
           <PlatformIcon v-for="platformIcon in platformsIcons" :id="platformIcon.id" :content="platformIcon.name" />
 
         </ul>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import PlatformIcon from "@/components/PlatformIcon.vue";
+import PlatformIcon from "@/components/Blogger/PlatformIcon.vue";
 
 export default {
   components: {PlatformIcon},

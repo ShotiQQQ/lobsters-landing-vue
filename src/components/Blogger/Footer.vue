@@ -27,10 +27,10 @@
 
             <ul class="footer-column-links">
               <li>
-                <a class="footer-column-link" href="index.html">Блогер</a>
+                <router-link class="footer-column-link" :to="{name: 'main'}">Блогер</router-link>
               </li>
               <li>
-                <a class="footer-column-link" href="advertiser.html">Рекламодатель</a>
+                <router-link class="footer-column-link" :to="{name: 'advertiser'}">Рекламодатель</router-link>
               </li>
             </ul>
 

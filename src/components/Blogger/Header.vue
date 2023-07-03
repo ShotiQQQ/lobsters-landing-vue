@@ -4,13 +4,13 @@
     <div class="_container">
       <div class="header-nav">
 
-        <a href="index.html" class="header-logo">
+        <router-link :to="{name: 'main'}" href="index.html" class="header-logo">
           <img src="/images/images/logo.svg" width="168" height="26" alt="Логотип компании Lobsters">
-        </a>
+        </router-link>
 
         <ul class="header-nav-links nav-list">
-          <li class="nav-item" id="first-link-tablet"><a href="index.html">Блогер</a></li>
-          <li class="nav-item"><a href="advertiser.html">Рекламодатель</a></li>
+          <li class="nav-item" id="first-link-tablet"><router-link :to="{name: 'main'}">Блогер</router-link></li>
+          <li class="nav-item"><router-link :to="{name: 'advertiser'}">Рекламодатель</router-link></li>
         </ul>
 
         <nav class="nav">
@@ -50,7 +50,7 @@
 
 <script>
 
-import PopupMobileMenu from "@/components/PopupMobileMenu.vue";
+import PopupMobileMenu from "@/components/Blogger/PopupMobileMenu.vue";
 export default {
   components: {PopupMobileMenu},
   data() {
