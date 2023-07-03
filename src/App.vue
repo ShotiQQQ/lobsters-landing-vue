@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div>
+    <Modal v-if="$store.state.isModalOpened" :component="this.$store.state.modalContent" />
+
+    <Header />
+
+    <SectionTopHero />
+    <SectionSteps />
+    <SectionDescription />
+    <SectionBrands />
+    <SectionPlatforms />
+    <SectionCase />
+    <SectionBottomHero />
+
+    <Footer />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import Header from "@/components/Header.vue";
+  import SectionSteps from "@/components/SectionSteps.vue";
+  import SectionTopHero from "@/components/SectionTopHero.vue";
+  import SectionDescription from "@/components/SectionDescription.vue";
+  import SectionBrands from "@/components/SectionBrands.vue";
+  import SectionPlatforms from "@/components/SectionPlatforms.vue";
+  import SectionCase from "@/components/SectionCase.vue";
+  import SectionBottomHero from "@/components/SectionBottomHero.vue";
+  import Footer from "@/components/Footer.vue";
+  import Modal from "@/components/Modal.vue";
+  import PopupMobileMenu from "@/components/PopupMobileMenu.vue";
 
-nav {
-  padding: 30px;
-}
+  export default {
+    components: {
+      PopupMobileMenu,
+      Modal,
+      Footer,
+      SectionBottomHero,
+      SectionCase, SectionPlatforms, SectionBrands, SectionDescription, SectionSteps, SectionTopHero, Header
+    },
+    data() {
+      return {
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+      }
+    },
+    methods: {
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+    }
+  }
+</script>
