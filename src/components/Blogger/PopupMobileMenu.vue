@@ -13,14 +13,20 @@
 
     <div class="mobile-menu-buttons">
       <a href="https://stat.thelobsters.ru/login" class="mobile-menu-button" id="mobile-login-button">Войти</a>
-      <button class="mobile-menu-button" id="mobile-registration-button">Регистрация</button>
+      <button class="mobile-menu-button" id="mobile-registration-button" @click="$store.commit('toggleModal', registrationComponent)">Регистрация</button>
     </div>
   </div>
 
 </template>
 
 <script>
+import popupRegistration from "@/components/Blogger/PopupRegistration.vue";
 export default {
-
+  components: {popupRegistration},
+  data() {
+    return {
+      registrationComponent: popupRegistration
+    }
+  }
 }
 </script>

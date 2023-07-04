@@ -10,7 +10,6 @@
     <SectionBrands />
     <SectionPlatforms />
     <SectionCase />
-<!--    <SectionOtherCases />-->
     <SectionBottomHero />
 
     <Footer />
@@ -29,11 +28,9 @@ import SectionBottomHero from "@/components/Blogger/SectionBottomHero.vue";
 import Footer from "@/components/Blogger/Footer.vue";
 import Modal from "@/components/Global/Modal.vue";
 import PopupMobileMenu from "@/components/Blogger/PopupMobileMenu.vue";
-import SectionOtherCases from "@/components/Blogger/SectionOtherCases.vue";
 
 export default {
   components: {
-    SectionOtherCases,
     PopupMobileMenu,
     Modal,
     Footer,

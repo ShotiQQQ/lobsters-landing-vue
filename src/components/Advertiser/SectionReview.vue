@@ -28,3 +28,10 @@
 <script>
 export default {}
 </script>
+<style scoped>
+  @media (max-width: 1024px) {
+    #arrow-yellow {
+      display: none;
+    }
+  }
+</style>

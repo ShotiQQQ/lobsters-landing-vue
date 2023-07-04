@@ -22,7 +22,7 @@
         Внимание! Указывайте только корректные контактные данные. Если мы не сможем связаться с вами, вы не получите доступ к личному кабинету
       </p>
 
-      <form class="registration-popup-form" v-if="!isSuccessRegistration">
+      <form class="registration-popup-form" v-if="!isSuccessRegistration" @submit.prevent>
 
         <div class="reg-form">
           <label for="name">ФИО</label>
@@ -41,7 +41,7 @@
 
         <div class="reg-form">
           <label for="phone">Телефон</label>
-          <input id="phone" data-maska="+7 ### ###-##-##" placeholder="Укажите телефон" v-model:value="telephone">
+          <input id="phone" placeholder="Укажите телефон" v-model:value="telephone" type="tel">
         </div>
 
         <div class="reg-form">
@@ -50,8 +50,8 @@
         </div>
 
         <div class="registration-drop-down-holder">
-          <button class="registration-popup-dropdown-button">Ваш статус<span></span></button>
-          <ul class="status-list hidden">
+          <button class="registration-popup-dropdown-button" @click.prevent="isStatusOpened = true">Ваш статус<span></span></button>
+          <ul class="status-list" v-show="isStatusOpened">
             <li class="status-list-item">
               <input type="radio" name="status" id="fiz" value="Физ. лицо" v-model:value="status">
               <label for="fiz">Физ. лицо, самозанятость</label>
@@ -66,7 +66,7 @@
               <label for="urlico">Юридическое лицо</label>
             </li>
 
-            <button class="close" id="status-list-close-button" @click="isStatusOpened = false"></button>
+            <button class="close" id="status-list-close-button" @click.prevent="isStatusOpened = false"></button>
           </ul>
         </div>
 
@@ -75,15 +75,15 @@
           <label for="agreement">Я принимаю <a href="https://lobsters.pro/oferta">Оферту</a> и <a href="https://lobsters.pro/privacy">Политику обработки персональных данных</a></label>
         </div>
 
-        <button class="registration-popup-submit-button" id="registration">
-                   <span class="loader">
+        <button class="registration-popup-submit-button" id="registration" @click="sendData" :disabled="isLoading">
+                   <span class="loader" v-if="isLoading">
                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
                             <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
                               <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
                             </path>
                         </svg>
                    </span>
-          <span class="registration-popup-submit-button__text">Оставить заявку</span>
+          <span class="registration-popup-submit-button__text" v-else>Оставить заявку</span>
         </button>
       </form>
 
@@ -93,6 +93,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -102,10 +104,34 @@ export default {
       telephone: '',
       platform: '',
       status: '',
+      isStatusValidate: null,
       isPolicyChecked: false,
       isSuccessRegistration: false,
       isStatusOpened: false,
+      isLoading: false,
     }
-  }
+  },
+  methods: {
+    sendData() {
+      this.isLoading = true;
+      axios.post('https://jsonplaceholder.typicode.com/posts', {
+        name: this.name,
+        email: this.email,
+        contact_details: this.contacts,
+        phone_number: this.telephone,
+        about: this.platform,
+        type: this.status,
+        meta: this.$store.state.queryParams
+      })
+          .then(res => {
+            console.log(res)
+
+          })
+          .finally(() => {
+            this.isLoading = false;
+            this.isSuccessRegistration = true;
+          })
+    }
+  },
 }
 </script>

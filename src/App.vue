@@ -11,8 +11,8 @@
 
       }
     },
-    methods: {
-
+    created() {
+      this.$store.commit('getQueryParams', this.$route.query);
     }
   }
 </script>

@@ -1864,7 +1864,6 @@ ul, ol {
 }
 
 .loader {
-    display: none;
     width: 40px;
 }
 
@@ -2005,6 +2004,7 @@ ul, ol {
 }
 
 .status-list {
+    display: flex;
     z-index: 99 !important;
     width: 326px;
     position: absolute;

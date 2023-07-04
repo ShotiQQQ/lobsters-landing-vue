@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     isModalOpened: false,
     modalContent: null,
+    queryParams: {},
     platformsIcons: [
       {
         id: 1,
@@ -52,10 +53,16 @@ export default new Vuex.Store({
     toggleModal(state, payload) {
       if (!payload) {
         state.modalContent = null;
+        state.isModalOpened = false;
       } else {
         state.modalContent = payload;
+        state.isModalOpened = true;
       }
-      state.isModalOpened = !state.isModalOpened;
+    },
+    getQueryParams(state, payload) {
+      if (payload) {
+        state.queryParams = payload;
+      }
     }
   },
   actions: {
