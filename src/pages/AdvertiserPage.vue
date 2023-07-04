@@ -7,35 +7,37 @@
     <SectionTopHero />
     <SectionSteps />
     <SectionDescription />
-    <SectionBrands />
     <SectionPlatforms />
-    <SectionCase />
+    <SectionReview />
     <SectionBottomHero />
 
     <Footer />
+
   </div>
 </template>
 
 <script>
-import Header from "@/components/Blogger/Header.vue";
-import SectionSteps from "@/components/Blogger/SectionSteps.vue";
-import SectionTopHero from "@/components/Blogger/SectionTopHero.vue";
-import SectionDescription from "@/components/Blogger/SectionDescription.vue";
-import SectionBrands from "@/components/Blogger/SectionBrands.vue";
-import SectionPlatforms from "@/components/Blogger/SectionPlatforms.vue";
-import SectionCase from "@/components/Blogger/SectionCase.vue";
-import SectionBottomHero from "@/components/Blogger/SectionBottomHero.vue";
-import Footer from "@/components/Blogger/Footer.vue";
-import Modal from "@/components/Blogger/Modal.vue";
-import PopupMobileMenu from "@/components/Blogger/PopupMobileMenu.vue";
+import Header from "@/components/Advertiser/Header.vue";
+import SectionTopHero from "@/components/Advertiser/SectionTopHero.vue";
+import SectionSteps from "@/components/Advertiser/SectionSteps.vue";
+import SectionDescription from "@/components/Advertiser/SectionDescription.vue";
+import SectionPlatforms from "@/components/Advertiser/SectionPlatforms.vue";
+import SectionReview from "@/components/Advertiser/SectionReview.vue";
+import SectionBottomHero from "@/components/Advertiser/SectionBottomHero.vue";
+import Footer from "@/components/Advertiser/Footer.vue";
+import Modal from "@/components/Global/Modal.vue";
 
 export default {
   components: {
-    PopupMobileMenu,
-    Modal,
     Footer,
     SectionBottomHero,
-    SectionCase, SectionPlatforms, SectionBrands, SectionDescription, SectionSteps, SectionTopHero, Header
+    SectionReview,
+    SectionPlatforms,
+    SectionDescription,
+    SectionSteps,
+    SectionTopHero,
+    Header,
+    Modal
   },
   data() {
     return {

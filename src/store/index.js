@@ -6,7 +6,45 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isModalOpened: false,
-    modalContent: null
+    modalContent: null,
+    platformsIcons: [
+      {
+        id: 1,
+        name: 'YouTube'
+      },
+      {
+        id: 2,
+        name: 'Telegram'
+      },
+      {
+        id: 3,
+        name: 'Сайты / Блоги'
+      },
+      {
+        id: 4,
+        name: 'Tik Tok'
+      },
+      {
+        id: 5,
+        name: 'Яндекс Дзен'
+      },
+      {
+        id: 6,
+        name: 'Мобильные приложения'
+      },
+      {
+        id: 7,
+        name: 'Instagram'
+      },
+      {
+        id: 8,
+        name: 'Вконтакте'
+      },
+      {
+        id: 9,
+        name: 'Рассмотрим другие площадки'
+      }
+    ]
   },
   getters: {
   },

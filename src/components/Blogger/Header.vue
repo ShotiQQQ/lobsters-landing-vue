@@ -35,7 +35,7 @@
               <a href="https://stat.thelobsters.ru/login" class="header-button log-in-button">Войти</a>
             </li>
             <li>
-              <button class="header-button registration-button">Регистрация</button>
+              <button class="header-button registration-button" @click="$store.commit('toggleModal', registrationComponent)">Регистрация</button>
             </li>
           </ul>
 
@@ -51,11 +51,14 @@
 <script>
 
 import PopupMobileMenu from "@/components/Blogger/PopupMobileMenu.vue";
+import PopupRegistration from "@/components/Blogger/PopupRegistration.vue";
+import popupRegistration from "@/components/Blogger/PopupRegistration.vue";
 export default {
-  components: {PopupMobileMenu},
+  components: {PopupMobileMenu, PopupRegistration},
   data() {
     return {
       mobileMenuComponent: PopupMobileMenu,
+      registrationComponent: PopupRegistration,
     }
   }
 }

@@ -13,7 +13,7 @@
             Монетизируйте свою аудиторию через платформу Lobsters и получайте
             <span class="hero-link">оплату за каждого клиента</span>
           </p>
-          <button class="hero-button" id="begin-work-button">Начать работу</button>
+          <button class="hero-button" id="begin-work-button" @click="$store.commit('toggleModal', registrationComponent)">Начать работу</button>
         </div>
 
         <div class="hero-image">
@@ -29,7 +29,13 @@
 </template>
 
 <script>
-export default {
+import popupRegistration from "@/components/Blogger/PopupRegistration.vue";
 
+export default {
+  data() {
+    return {
+      registrationComponent: popupRegistration,
+    }
+  }
 }
 </script>

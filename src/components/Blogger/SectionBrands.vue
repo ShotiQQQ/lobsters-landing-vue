@@ -14,7 +14,7 @@
 
         <div class="brands-link-holder">
           <div class="brands-link">
-            <p>Вы классный бренд?</p><a href="advertiser.html">Давайте работать вместе</a>
+            <p>Вы классный бренд?</p><router-link :to="{name: 'advertiser'}">Давайте работать вместе</router-link>
           </div>
         </div>
 
